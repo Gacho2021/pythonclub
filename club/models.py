@@ -38,3 +38,6 @@ class Review(models.model):
 
     class Meta:
         db_table='review'
+
+
+
