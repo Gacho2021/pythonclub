@@ -1,1 +1,33 @@
+insert into course(coursename, credits, coursedescription)
+values ('test', 0,'this is test');
 
+insert into person(lastname, firstname, email, address, city, state, postalcode, phone, dateadded)
+values ('hernadez', 'roberta', 'rhernadez@outlook.com', 'apt 101, 234 Nelson Street', 'Seattle', 'WA', 
+	   '98122', '2065552019', current_date);
+	   
+insert into student(personkey, studentstartdate, statuskey)
+values (currval('person_personkey_seq'), current_date, 1);
+
+insert into person(lastname, firstname, email, address, city, state, postalcode, phone, dateadded)
+values ('Brenen', 'Marylin', 'Maylin.Brenen@getcerts.com', '234 Nelson Street', 'Seattle', 'WA', 
+	   '98122', '2065557798', current_date);
+	   
+insert into instructor(personkey, hiredate, statuskey)
+values (currval('person_personkey_seq'), current_date, 2);
+
+select * from logintable;
+
+--updates
+select * from person order by personkey;
+update person
+set lastname='Clarkston',
+email='geraldineclark@msn.com'
+where personkey=211;
+
+update roster
+set finalgrade=3.22
+where rosterkey=1179;
+
+select * from course;
+delete from course where coursekey=29
+or coursekey=30;
